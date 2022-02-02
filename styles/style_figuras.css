@@ -1,0 +1,49 @@
+:root{
+    --white:#FFFFFF;
+    --black:#000000;
+    --graybase:#616A6B ;
+    --base-color-dark:#eee4e4;
+    --base-color-light:#f3eded;
+    --blue-light:#145374;
+    --blue-dark:#00334E;
+    --salmon-focus:#EE6F57;
+    --text-input-field: #F7F7F7;
+
+    --vv:8px;
+    --sm:12px;
+    --md:16px;
+    --lg:20px;
+}
+body{
+    font-family: 'Raleway', sans-serif;
+    margin: 0;
+    }
+.contenedor{
+    display: grid;
+    place-items: center;
+    width: 100vw;
+    height:100vh ;
+    background: var(--base-color-dark);
+}
+.subcontenedor{
+    display: flex;
+    padding: 21px;
+    column-gap: 8px;
+    }
+.cuadrado, .rectangulo, .triangulo, .circunferencia{
+    border: 1px solid var(--base-color-dark);
+    border-radius: 24px;
+    background: var(--base-color-light);
+    display: grid;
+    place-items: center;
+   
+}
+.cuadrado p, .rectangulo p, .triangulo p, .circunferencia p{
+    font-size: var(--vv);
+}
+
+.label {
+    font-size: var(--vv);
+    font-weight: bold;
+    margin-bottom: 4px;
+}

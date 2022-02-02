@@ -112,11 +112,9 @@ body{
     .subcontainer .title h1{
         font-size: var(--lg);
     }
-
     .subcontainer .description p{
         font-size: var(--md);
     }
-
     .caja-imagen p{
         font-size: var(--sm);
         padding: 8px;
@@ -125,13 +123,8 @@ body{
         width: 32px;
         padding: 8px;
     }
-
     .menu-botones{
         display: flex;
         flex-direction: column;
-
-    }
-
-
-    
+    }  
 }
