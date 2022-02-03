@@ -2,6 +2,7 @@
     --white:#FFFFFF;
     --black:#000000;
     --graybase:#616A6B ;
+    --grabase-light:#a99191;
     --base-color-dark:#eee4e4;
     --base-color-light:#f3eded;
     --blue-light:#145374;
@@ -29,7 +30,7 @@ body{
 .subcontenedor{
     display: grid;
     grid-template-columns:1fr 1fr 1fr 1fr;
-    padding: 4px 16px 4px 16px;
+    padding: 4px 16px 4px 4px;
     column-gap: 4px;
     }
 
@@ -47,6 +48,7 @@ body{
     place-items: center;
     font-size: var(--md);
     font-weight:bold;
+
 }
 .figura .encabezado img{
     width: 50px;
@@ -72,12 +74,12 @@ body{
     padding: 4px;
     margin-bottom: 4px;
     place-items: center;
+    font-size: var(--vv);
 }
 
 .figura .botonera{
     display: flex;
-    flex-direction: column;
-    padding: 0px 8px 0px 8px;
+    flex-direction: row;
     place-content: center;
     text-align: center;
     place-content: center;
@@ -90,6 +92,8 @@ body{
     color: var(--blue-light);
     cursor: pointer;   
     width: 100%;
+    margin: 8px;
+    font-size: var(--vv);
 }
 
 .figura button:hover{
@@ -103,16 +107,21 @@ body{
 }
 
 .figura .resultados{
-    display: flex;
-    flex-direction: column;
-    place-items: left;
+    display: grid;
+    grid-template-columns:1fr;
+    place-items: center;
+    place-content:center;
     font-size: var(--vv);
     font-weight: 300;
-    padding: 0px 0px 0px 4px;
- }
+    text-align: center;
+
+     }
 
  .figura .resultados p{
-    margin: 0px 0px 4px 0px;
+    border-bottom:1px solid var(--base-color-dark);
+     text-align: center;
+
+
  }
 
  @media(max-width: 600px){
