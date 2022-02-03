@@ -8,6 +8,7 @@
     --blue-dark:#00334E;
     --salmon-focus:#EE6F57;
     --text-input-field: #F7F7F7;
+    --very-blue-light:#407b9b;
 
     --vv:8px;
     --sm:12px;
@@ -19,8 +20,10 @@ body{
     margin: 0;
     }
 .contenedor{
+    display: grid;
+    place-content: center;
     width: 100%;
-    height:100% ;
+    height:100vh ;
     background: var(--base-color-dark);
 }
 .subcontenedor{
@@ -32,7 +35,7 @@ body{
 
 .figura{
     border: 1px solid var(--base-color-dark);
-    border-radius: 20px;
+    border-radius: 16px;
     background: var(--base-color-light);
     display: flex;
     flex-direction: column;
@@ -43,13 +46,15 @@ body{
     flex-direction: column;
     place-items: center;
     font-size: var(--md);
-    font-weight: 400;
+    font-weight:bold;
 }
 .figura .encabezado img{
     width: 50px;
     height: 50px;
 }
 .figura form{
+    display: flex;
+    flex-direction: column;
     padding: 4px;
 }
 
@@ -68,12 +73,33 @@ body{
     margin-bottom: 4px;
     place-items: center;
 }
-.figura .boton{
+
+.figura .botonera{
+    display: flex;
+    flex-direction: column;
+    padding: 0px 8px 0px 8px;
+    place-content: center;
+    text-align: center;
+    place-content: center;
+}
+
+.figura button{
     border-radius: 8px;
     background: var(--base-color-light);
     border: 1px solid var(--blue-light);
     color: var(--blue-light);
-    
+    cursor: pointer;   
+    width: 100%;
+}
+
+.figura button:hover{
+    border-radius: 8px;
+    background:var(--very-blue-light);
+    border: 1px solid var(--base-color-light);
+    color:var(--base-color-light);;
+    cursor: pointer;
+    text-align: right;
+    width: 100%;
 }
 
 .figura .resultados{
@@ -83,7 +109,39 @@ body{
     font-size: var(--vv);
     font-weight: 300;
     padding: 0px 0px 0px 4px;
-}
+ }
+
+ .figura .resultados p{
+    margin: 0px 0px 4px 0px;
+ }
+
+ @media(max-width: 600px){
+    .contenedor{
+        display: grid;
+        place-content: center;
+        width: 100%;
+        height:100% ;
+        background: var(--base-color-light);
+    }
+    .subcontenedor{
+        display: grid;
+        grid-template-columns:1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr;
+        column-gap: 4px;
+        padding: 8px 4px 8px 4px;
+        }
+
+        .figura{
+            border: 1px solid var(--very-blue-light);
+            border-radius: 16px;
+            background: var(--base-color-light);
+            display: flex;
+            flex-direction: column;
+            gap: 4px 4px;
+            padding: 8px;
+            margin: 8px;
+            }
+ }
 
 
 
