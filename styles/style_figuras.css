@@ -24,14 +24,14 @@ body{
     display: grid;
     place-content: center;
     width: 100%;
-    height:100vh ;
+    height:100vh;
     background: var(--base-color-dark);
 }
 .subcontenedor{
     display: grid;
     grid-template-columns:1fr 1fr 1fr 1fr;
-    padding: 4px 16px 4px 4px;
-    column-gap: 4px;
+    padding: 4px 4px 4px 4px;
+    column-gap: 8px;
     }
 
 .figura{
@@ -48,7 +48,6 @@ body{
     place-items: center;
     font-size: var(--md);
     font-weight:bold;
-
 }
 .figura .encabezado img{
     width: 50px;
@@ -60,21 +59,22 @@ body{
     padding: 4px;
 }
 
-.figura form label {
+.figura form .label {
     font-size: var(--vv);
-    font-weight: bold;
     margin-bottom: 4px;
+    z-index: 1;
 }
-.figura form input {
+
+
+.figura form .input-lado {
     background-color: var(--text-input-field);
-    border: none;
+    border: 1px solid var(--white);
     border-radius: 8px;
     height: 16px;
     font-size: var(--vv);
     padding: 4px;
     margin-bottom: 4px;
     place-items: center;
-    font-size: var(--vv);
 }
 
 .figura .botonera{
@@ -92,6 +92,7 @@ body{
     color: var(--blue-light);
     cursor: pointer;   
     width: 100%;
+    height: 16px;
     margin: 8px;
     font-size: var(--vv);
 }
@@ -107,24 +108,20 @@ body{
 }
 
 .figura .resultados{
-    display: grid;
-    grid-template-columns:1fr;
+    display: flex;
+    flex-direction: column;
     place-items: center;
-    place-content:center;
     font-size: var(--vv);
-    font-weight: 300;
-    text-align: center;
-
-     }
-
- .figura .resultados p{
-    border-bottom:1px solid var(--base-color-dark);
-     text-align: center;
-
-
+    font-weight:300;
+    margin: 0px;
  }
 
- @media(max-width: 600px){
+ .figura .resultados p{
+     border-bottom:1px solid var(--base-color-dark);
+  }
+
+
+@media(max-width: 600px){
     .contenedor{
         display: grid;
         place-content: center;
@@ -138,19 +135,18 @@ body{
         grid-template-rows: 1fr 1fr 1fr 1fr;
         column-gap: 4px;
         padding: 8px 4px 8px 4px;
-        }
-
-        .figura{
-            border: 1px solid var(--very-blue-light);
-            border-radius: 16px;
-            background: var(--base-color-light);
-            display: flex;
-            flex-direction: column;
-            gap: 4px 4px;
-            padding: 8px;
-            margin: 8px;
             }
- }
+    .figura{
+        border: 1px solid var(--text-input-field);
+        border-radius: 16px;
+        background: var(--base-color-dark);
+        display: flex;
+        flex-direction: column;
+        gap: 4px 4px;
+        padding: 8px;
+        margin: 8px;
+            }
+}
 
 
 
