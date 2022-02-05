@@ -21,17 +21,18 @@ body{
     margin: 0;
     }
 .contenedor{
-    display: grid;
+    display: flex;
     place-content: center;
     width: 100%;
     height:100vh;
     background: var(--base-color-dark);
 }
 .subcontenedor{
+    width: 100%;
     display: grid;
     grid-template-columns:1fr 1fr 1fr 1fr;
-    padding: 4px 4px 4px 4px;
-    column-gap: 8px;
+    padding: 32px;
+    column-gap: 16px;
     }
 
 .figura{
@@ -41,12 +42,13 @@ body{
     display: flex;
     flex-direction: column;
     gap: 4px 4px;
+    padding: 8px;
 }
 .figura .encabezado{
     display: flex;
     flex-direction: column;
     place-items: center;
-    font-size: var(--md);
+    font-size: var(--lg);
     font-weight:bold;
 }
 .figura .encabezado img{
@@ -60,7 +62,7 @@ body{
 }
 
 .figura form .label {
-    font-size: var(--vv);
+    font-size: var(--md);
     margin-bottom: 4px;
     z-index: 1;
 }
@@ -71,7 +73,7 @@ body{
     border: 1px solid var(--white);
     border-radius: 8px;
     height: 16px;
-    font-size: var(--vv);
+    font-size: var(--sm);
     padding: 4px;
     margin-bottom: 4px;
     place-items: center;
@@ -94,7 +96,7 @@ body{
     width: 100%;
     height: 16px;
     margin: 8px;
-    font-size: var(--vv);
+    font-size: var(--sm);
 }
 
 .figura button:hover{
@@ -111,7 +113,7 @@ body{
     display: flex;
     flex-direction: column;
     place-items: center;
-    font-size: var(--vv);
+    font-size: var(--sm);
     font-weight:300;
     margin: 0px;
  }
