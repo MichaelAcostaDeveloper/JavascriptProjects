@@ -50,14 +50,14 @@ function calcularAreaCuadrado(){
     const area=areaCuadrado(valor);
 
     const resultado=document.getElementById("result");
-    resultado.innerHTML="The surface is: "+area+" cm";
+    resultado.innerHTML="The surface is: "+area+" cm²";
 }
 function calcularPerimetroCuadrado(){
     const input=document.getElementById("InputCuadrado");
     const valor=input.value;
 
     const perimetro=perimetroCuadrado(valor);
-    
+
     const resultado=document.getElementById("result");
     resultado.innerHTML="The perimeter is: "+perimetro+" cm";
 }
@@ -71,7 +71,7 @@ function calcularAreaRectangulo(){
     const area=areaRectangulo(valorA,valorB);
 
     const resultado=document.getElementById("resultRectangle");
-    resultado.innerHTML="The surface is: "+area+" cm";
+    resultado.innerHTML="The surface is: "+area+" cm²";
 }
 function calcularPerimetroRectangulo(){
     const inputA=document.getElementById("InputRectanguloA");
@@ -90,7 +90,7 @@ function circulo(){
     const area=areaCircunferencia(r);
     const areaR=Math.round(area)
     const resultado=document.getElementById("resultCircunf")
-    resultado.innerHTML="The surfaces is: "+areaR+" cm"
+    resultado.innerHTML="The surfaces is: "+areaR+" cm²"
 }
 
 function circunf(){
