@@ -93,32 +93,30 @@ function circunf(){
     const resultado=document.getElementById("resultCircunf")
     resultado.innerHTML="The surfaces is: "+perimetroR+" cm"
 }
-//con esta funcion se verifica que existe el triangulo
+
+//con esta función se verifica que existe el triángulo
 function verificarTriangulo(a,b,c){
     if ((a+b>c) & (a+c>b) & (b+c>a)) {
         console.log("SI EXISTE EL TRIANGULO")
-        calculo_area_rectangulo(a,b,c)
-        return true
+        return calculo_area_rectangulo(a,b,c)
     } else{
         console.log("NO EXISTE EL TRIANGULO")
-        return false
+        alert("Con los valores de lados de triángulo que ingresó NO se puede construir un triángulo!!!")
     }
 }
-
-
-//con esta funcion se verifica que es un triangulo rectangulo
+//con esta función se verifica que es un triángulo rectángulo
 function calculo_area_rectangulo(a,b,c){
     if(Math.pow(a,2)===Math.pow(b,2)+Math.pow(c,2)){
         console.log(`Es triangulo rectangulo y la superficie es: ${b*c/2}`)
-        return b*c/2//area del triangulo
+        return b*c/2;//area del triangulo
     }else if(Math.pow(b,2)===Math.pow(a,2)+Math.pow(c,2)){
         console.log(`Es triangulo rectangulo y la superficie es: ${a*c/2}`)
-        return a*c/2//area del triangulo
+        return a*c/2;//area del triangulo
     }else if(Math.pow(c,2)===Math.pow(b,2)+Math.pow(a,2)){
         console.log(`Es triangulo rectangulo y la superficie es: ${b*a/2}`)
-        return a*b/2//area del triangulo
+        return a*b/2;//area del triangulo
     }else{
-        calculo_area_oblicuangulo(a,b,c)
+        return calculo_area_oblicuangulo(a,b,c)
     }
 }
 
@@ -131,27 +129,25 @@ function calculo_area_oblicuangulo(a,b,c){
     if((((a>b)&(a>c))&((b===c)||(c>b)||(b>c)))||(((a<b)&(a<c))&((b===c)||(c>b)||(b>c)))){
         altura=b*Math.sin(C)
         console.log(`Es triangulo oblicuangulo y la superficie es: ${a*altura/2}`)
-        return a*altura/2
+        return a*altura/2;
         }
         else if((((b>c)&(b>a))&((a===c)||(c>a)||(a>c)))||((((b<c)&(b<a))&((a===c)||(c>a)||(a>c))))){
         altura=a*Math.sin(C)
         console.log(`Es triangulo oblicuangulo y la superficie es: ${b*altura/2}`)
-        return b*altura/2
+        return b*altura/2;
         }
         else if((((c>a)&(c>b))&((b===a)||(a>b)||(b>a)))||(((c<a)&(c<b))&((b===a)||(a>b)||(b>a)))){
         altura=b*Math.sin(A)
         console.log(`Es triangulo oblicuangulo y la superficie es: ${c*altura/2}`)
-        return c*altura/2
+        return c*altura/2;
         }
         //evaluacion de los 3 lados iguales
         else if((a===b) & (b===c)& (c===a)){
             altura=a*Math.sin(B)
             console.log(`Es triangulo oblicuangulo y la superficie es: ${a*altura/2}`)
-            return a*altura/2
-       }
+            return a*altura/2;}
 
         }
-    
 function checkingTriangle(){
     var lado_a=document.getElementById("lado_a");
     var lado_a=Number(lado_a.value);
@@ -159,6 +155,25 @@ function checkingTriangle(){
     var lado_b=Number(lado_b.value);
     var lado_c=document.getElementById("lado_c");
     var lado_c=Number(lado_c.value);
+    var res=verificarTriangulo(lado_a,lado_b,lado_c);
+    var resp=Math.round(res);
+    var answer=document.getElementById("resultadoTriangulo");
+    answer.innerHTML="The surface is: "+resp+" cm²";
+}
 
-    const res=verificarTriangulo(lado_a,lado_b,lado_c)
+function calcular_perimeter_Triangulo(a,b,c){
+    return a+b+c
+
+}
+function perimeterTriangle(){
+    var lado_a=document.getElementById("lado_a");
+    var lado_a=Number(lado_a.value);
+    var lado_b=document.getElementById("lado_b");
+    var lado_b=Number(lado_b.value);
+    var lado_c=document.getElementById("lado_c");
+    var lado_c=Number(lado_c.value);
+    var result=calcular_perimeter_Triangulo(lado_a,lado_b,lado_c);
+    var respt=Math.round(result)
+    var answer=document.getElementById("resultadoTriangulo");
+    answer.innerHTML="The perimeter is: "+respt+" cm";
 }
