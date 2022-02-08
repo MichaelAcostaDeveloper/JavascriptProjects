@@ -58,18 +58,18 @@
                 </div>
                 <form>
                     <p for="datos" class="label">Side a:</p>
-                    <input type="number" id="lado" placeholder="value in cm" class="input-lado" >
+                    <input type="number" id="lado_a" placeholder="value in cm" class="input-lado" >
                     <p for="datos" class="label">Side b:</p>
-                    <input type="number" id="lado" placeholder="value in cm" class="input-lado" >
+                    <input type="number" id="lado_b" placeholder="value in cm" class="input-lado" >
                     <p for="datos" class="label">Side c:</p>
-                    <input type="number" id="lado" placeholder="value in cm" class="input-lado" >
+                    <input type="number" id="lado_c" placeholder="value in cm" class="input-lado" >
                 </form>
                 <div class="botonera">
-                    <button class="boton">Surface</button>
+                    <button class="boton" onclick="checkingTriangle()">Surface</button>
                     <button class="boton">Perimeter</button>
                 </div>
                 <div class="resultados">
-                    <p>result</p>
+                    <p id="resultadoTriangulo">result</p>
                 </div>
 
             </div>
@@ -88,7 +88,7 @@
                 </div>
                 <div class="resultados">
                     <p id="resultCircunf"></p>
-                </div>     
+                </div>
             </div>
         </div>
     </div>
