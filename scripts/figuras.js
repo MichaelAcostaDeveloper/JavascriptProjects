@@ -43,6 +43,7 @@ function perimetroCircunferencia(radio){
 console.groupEnd();
 //En esta seccion se establece las funciones para la app de figuras
 //Aqui se ubican las funciones para el html de figuras
+//FUNCIONES PARA EL CUADRADO
 function calcularAreaCuadrado(){
     const input=document.getElementById("InputCuadrado");
     const valor=input.value;
@@ -57,7 +58,7 @@ function calcularPerimetroCuadrado(){
     const resultado=document.getElementById("result");
     resultado.innerHTML="The perimeter is: "+perimetro+" cm";
 }
-
+//FUNCIONES PARA EL RECTANGULO
 function calcularAreaRectangulo(){
     const inputA=document.getElementById("InputRectanguloA");
     const valorA=inputA.value;
@@ -76,24 +77,24 @@ function calcularPerimetroRectangulo(){
     const resultado=document.getElementById("resultRectangle");
     resultado.innerHTML="The perimeter is: "+perimetro+" cm";
 }
+//FUNCIONES PARA LA CIRCUNFERENCIA
 function circulo(){
     const radio=document.getElementById("InputRadio")
     const r=Number(radio.value);
     const area=areaCircunferencia(r);
-    const areaR=Math.round(area)
+    const areaR=area.toFixed(2)
     const resultado=document.getElementById("resultCircunf")
     resultado.innerHTML="The surfaces is: "+areaR+" cm²"
 }
-
 function circunf(){
     const radio=document.getElementById("InputRadio")
     const r=Number(radio.value);
     const perimetro=perimetroCircunferencia(r);
-    const perimetroR=Math.round(perimetro)
+    const perimetroR=perimetro.toFixed(2)
     const resultado=document.getElementById("resultCircunf")
     resultado.innerHTML="The surfaces is: "+perimetroR+" cm"
 }
-
+//FUNCIONES PARA EL TRIANGULO
 //con esta función se verifica que existe el triángulo
 function verificarTriangulo(a,b,c){
     if ((a+b>c) & (a+c>b) & (b+c>a)) {
@@ -119,12 +120,10 @@ function calculo_area_rectangulo(a,b,c){
         return calculo_area_oblicuangulo(a,b,c)
     }
 }
-
 function calculo_area_oblicuangulo(a,b,c){
     var B=Math.acos((Math.pow(a,2)+Math.pow(c,2)-Math.pow(b,2))/(2*a*c))
     var A=Math.acos((Math.pow(b,2)+Math.pow(c,2)-Math.pow(a,2))/(2*b*c))
     var C=Math.acos((Math.pow(a,2)+Math.pow(b,2)-Math.pow(c,2))/(2*a*b))
-
     //evaluacion de un lado mayor y el resto diferentes o evaluacion de dos lados iguales pero mayores al tercero
     if((((a>b)&(a>c))&((b===c)||(c>b)||(b>c)))||(((a<b)&(a<c))&((b===c)||(c>b)||(b>c)))){
         altura=b*Math.sin(C)
@@ -146,7 +145,6 @@ function calculo_area_oblicuangulo(a,b,c){
             altura=a*Math.sin(B)
             console.log(`Es triangulo oblicuangulo y la superficie es: ${a*altura/2}`)
             return a*altura/2;}
-
         }
 function checkingTriangle(){
     var lado_a=document.getElementById("lado_a");
@@ -156,14 +154,12 @@ function checkingTriangle(){
     var lado_c=document.getElementById("lado_c");
     var lado_c=Number(lado_c.value);
     var res=verificarTriangulo(lado_a,lado_b,lado_c);
-    var resp=Math.round(res);
+    var resp=res.toFixed(2);
     var answer=document.getElementById("resultadoTriangulo");
     answer.innerHTML="The surface is: "+resp+" cm²";
 }
-
 function calcular_perimeter_Triangulo(a,b,c){
     return a+b+c
-
 }
 function perimeterTriangle(){
     var lado_a=document.getElementById("lado_a");
@@ -173,7 +169,7 @@ function perimeterTriangle(){
     var lado_c=document.getElementById("lado_c");
     var lado_c=Number(lado_c.value);
     var result=calcular_perimeter_Triangulo(lado_a,lado_b,lado_c);
-    var respt=Math.round(result)
+    var respt=result.toFixed(2)
     var answer=document.getElementById("resultadoTriangulo");
     answer.innerHTML="The perimeter is: "+respt+" cm";
 }
